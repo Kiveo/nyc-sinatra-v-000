@@ -15,9 +15,20 @@ class LandmarksController < ApplicationController
     redirect :"landmarks/#{@landmark.id}"
   end
 
-  get '/landmarks/:id' do
+  get '/landmarks/:id' do #show request
     @landmark = Landmark.find_by_id(params[:id])
     erb :"landmarks/show"
+  end
+
+  get '/landmarks/:id/edit' do #edit request
+    @landmark = Landmark.find_by_id(params[:id])
+    erb :"landmarks/show"
+  end
+
+  patch '/landmarks/:id' do #edit and redirect
+    @landmark = Landmark.find_by_id(params[:id])
+
+    redirect :"landmarks/#{@landmark.id}"
   end
 
 end
