@@ -22,7 +22,7 @@ class LandmarksController < ApplicationController
 
   get '/landmarks/:id/edit' do #edit request
     @landmark = Landmark.find_by_id(params[:id])
-    erb :"landmarks/show"
+    erb :"landmarks/edit"
   end
 
   patch '/landmarks/:id' do #edit and redirect
