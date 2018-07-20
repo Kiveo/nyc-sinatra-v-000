@@ -11,7 +11,7 @@ class LandmarksController < ApplicationController
 
   post '/landmarks' do #create and redirect
     @landmark = Landmark.create(params[:landmark])
-    
+
     redirect :"landmarks/#{@landmark.id}"
   end
 
@@ -19,5 +19,5 @@ class LandmarksController < ApplicationController
     @landmark = Landmark.find_by_id(params[:id])
     erb :"landmarks/show"
   end
-  
+
 end
